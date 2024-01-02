@@ -13,7 +13,10 @@
 //         open:"9.00am",
 //         close:"8.00am"
 //     },
-    const pets = [
+    
+
+// The variables to function like a "database"
+const pets = [
         {
             name:"lucas",
             age:"12",
@@ -46,33 +49,33 @@
 // console.log(petSalon.pets[0].name);
 // console.log(petSalon.pets[1].name);
 // console.log(petSalon.pets[2].name);
-//try to do array and if not use brute force
 
 //document.getElementById("title").innerHTML=petSalon.name;
 
 
-// function one -> counts pets via pets.length to string
+// function one -> counts pets via pets.length
 function petAmount() {
     const counter = document.getElementById("petsRegisterNum");
     counter.textContent = pets.length;
 } // can add .toString to make ^^^ this number a string
 
-// function two displays the pets names via line 71 
+// function two displays the pets names via line 73
 function displayNames() {
     const petNames = document.getElementById("petList");
 
 
     petList.innerHTML = "";
 
-
+    //for loop that goes though the pet names to create a list
     for (let i = 0; i < pets.length; i++) {
         const pet = pets[i];
         const listItem = document.createElement("li");
         listItem.textContent = pet.name;
+        //append means to attach and append child means to attach the names to each other in this context
         petList.appendChild(listItem);
     }
 }
 
-
+// runs the functions
 petAmount();
 displayNames();
