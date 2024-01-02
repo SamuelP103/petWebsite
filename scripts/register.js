@@ -15,7 +15,7 @@
 //     },
     
 
-// The variables to function like a "database"
+// The variables to function like a "database" in an array
 const pets = [
         {
             name:"lucas",
