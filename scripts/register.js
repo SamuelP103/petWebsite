@@ -40,28 +40,52 @@ console.log(inputName,inputAge,inputGender,inputBreed);
 let newPet= new Pet(inputName,inputAge,inputGender, inputBreed);
 petSalon.pets.push(newPet);
 console.log(petSalon.pets);
+
+displayPetCards();
+petAmount();
+
 }
 //creating pets using constructor
-let p1 = new Pet("Scooby",60,"male","Beagle");
-let p2 = new Pet("tiger",16,"male","Bulldog");
-let p3 = new Pet("Lucky",25,"male","Poodle");
-let p4 = new Pet("rex",12,"male","Lab");
-
 
 
 // pushing pets into pets array
-petSalon.pets.push(p1,p2,p3,p4);
 
 
 
 
-// function one -> counts pets via pets.length
-function petAmount() {
-    const counter = document.getElementById("petsRegisterNum");
-    counter.textContent = Pet.length;
+
+
+
+function init(){
+    let p1 = new Pet("Scooby",60,"male","Beagle");
+    let p2 = new Pet("tiger",16,"male","Bulldog");
+    let p3 = new Pet("Lucky",25,"male","Poodle");
+    let p4 = new Pet("rex",12,"male","Lab");
+
+    petSalon.pets.push(p1,p2,p3,p4);
+
+    displayPetCards();
+    petAmount();
     
 }
-petAmount(); // can add .toString to make ^^^ this number a string
+
+
+window.onload=init; // waits to render the html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 // function two displays the pets names via line 73
 function displayNames() {
