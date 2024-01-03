@@ -21,7 +21,9 @@
         <h2>Pet Names:</h2>
         <ul id="petList"></ul>
     </div>
+    
     <!-- for future use in submitting new pets -->
+    <!-- 
         <form onsubmit="addPet(event)" class="input-container">
             <div class="info-box3">
                 <label for="name">Enter your pet's name:</label>
@@ -42,6 +44,33 @@
                     <button class="submit-button" type="submit">Submit</button>
                 </div>
             </div>
+        -->
+            <main>
+                <div class="info-box2">
+                    <h2>Register a new pet</h2>
+                    <div>
+                        <label>Name:</label>
+                        <input type="text" placeholder="Name here"
+                        id="txtName">
+                    </div>
+                    <div>
+                        <label>Age:</label>
+                        <input type="number" placeholder="Age here"
+                        id="txtAge">
+                    </div>
+                    <div>
+                        <label>Gender:</label>
+                        <input type="text" placeholder="Gender here"
+                        id="txtGender">
+                    </div>
+                    <div>
+                        <label>Breed:</label>
+                        <input type="text" placeholder="Breed here"
+                        id="txtBreed">
+                    </div>
+                    <button onClick="register()">Register</button>
+                </div>
+            </main>
             
 
 
