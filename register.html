@@ -17,10 +17,7 @@
         <p>Pet Count:<span id="petsRegisterNum">0</span></h2></p>
     </div>
     <!-- Pet Names Section -->
-    <div class="info-box">
-        <h2>Pet Names:</h2>
-        <ul id="petList"></ul>
-    </div>
+
     
     <!-- for future use in submitting new pets -->
     <!-- 
@@ -54,7 +51,7 @@
                         id="txtName">
                     </div>
                     <div>
-                        <label>Age:</label>
+                        <label>Age:&nbsp;&nbsp;&nbsp;&nbsp;</label>
                         <input type="number" placeholder="Age here"
                         id="txtAge">
                     </div>
@@ -64,15 +61,16 @@
                         id="txtGender">
                     </div>
                     <div>
-                        <label>Breed:</label>
+                        <label>Breed:&nbsp;</label>
                         <input type="text" placeholder="Breed here"
                         id="txtBreed">
                     </div>
                     <button onClick="register()">Register</button>
                 </div>
-                <div>
+                <div id="bottom">
                     <h2>Registered pets</h2>
                     <div id="pets">
+                        // turn to ordered list then make the cards based of that ordered list
 
                     </div>
                 </div>

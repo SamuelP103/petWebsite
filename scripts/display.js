@@ -4,7 +4,7 @@ const counter = document.getElementById("petsRegisterNum");
     counter.textContent = petSalon.pets.length.toString();
     
 }
-// petAmount(); // can add .toString to make ^^^ this number a string
+
 
 function displayPetCards(){
     const DIV = document.getElementById("pets");
