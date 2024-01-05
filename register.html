@@ -70,24 +70,49 @@
                         <input type="text" placeholder="Service Requested"
                         id="txtService">
                     </div>
+                    <div>
+                        <label>When:</label>
+                        <input type="Text" placeholder="Time Requested"
+                        id="txtTime">
+                    </div>
                     <button onClick="register()">Register</button>
                 </div>
                 <div id="bottom">
                     <h2>Registered pets</h2>
                     <div id="pets">
-                        // turn to ordered list then make the cards based of that ordered list
+                        
 
                     </div>
-                </div>
-            
+
+                    <div>  
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>NAME</th>
+                                    <th>AGE</th>
+                                    <th>GENDER</th>
+                                    <th>SERVICE</th>
+                                    <th>BREED</th>
+                                </tr>
+                            </thead>
+                            <tbody id="pets2">                   
+                            </tbody>
+                        </table>
+                    </div>
+
+
+
+
             
             </main>
             
 
 
-        </form>
+
 
     <script src="./scripts/register.js"></script>
     <script src="./scripts/display.js"></script>
 </body>
 </html>
+
+<!-- add payment method or some other method  or just color of pet -->
