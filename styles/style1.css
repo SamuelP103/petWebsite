@@ -101,17 +101,19 @@ input, select {
 
 #pets {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-around;
 }
 /* used to split each pet into different cards */
+/* 
 #pets div {
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
     margin: 10px;
     width: 200px;
-    /* to shadow things use this vvv */
+    /* to shadow things use this vvv 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     line-height: 30px;
     font-size: 20px;
@@ -128,6 +130,137 @@ input, select {
     font-size: 30px;
     
 }
+
+ */
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table th, .table td {
+    padding: 8px;
+    text-align: left;
+}
+
+.table th {
+    background-color: #f2f2f2;
+    min-width: 100px;
+}
+.table th :first-child {
+    max-width: 10px !important;
+}
+
+
+*{
+    text-align: center !important;
+}
+
+tbody td{
+    margin: 100px !important;
+    width: 6000px !important;
+
+}
+table {
+    table-layout: fixed !important;
+    width: 100% !important;
+    
+}
+tbody{
+    width: 690%;
+}
+tbody button{
+    margin-left: -400px;
+}
+/*  600 768 1080 1440 */
+/* @media(max-width:1440px){
+    tbody{
+        background-color: #3367d6;
+        width: 1630px;
+
+    }
+    } */
+@media(max-width:1500px){
+    tbody button{
+        margin-left: -280px;
+    }
+    }
+@media(max-width:1230px){
+    tbody button{
+        margin-left: -200px;
+    }
+    }
+@media(max-width:900px){
+    tbody button{
+        margin-left: -170px;
+    }
+    }
+@media(max-width:900px){
+    #table2 {
+        margin-left: 5px;
+        margin-right: 5%;
+    }
+    }
+@media(max-width:780px){
+    tbody button{
+        margin-left: -170px;
+        background-color: rgba(255, 255, 255, 0);
+        color: #f2f2f200;
+        width: 0;
+        border: none;
+        height: 0;
+
+    }
+    }
+    #warning{
+        color: rgba(245, 222, 179, 0);
+    }
+    @media(max-width:780px){
+    #warning{
+        color: #868686b5;
+    }
+}
+#txtService{
+    width: 130px;
+}
+@media(min-width:1180px){
+    .info-box2{
+        width: 50%;
+
+    }
+    }
+@media(min-width:1180px){
+    .flex-box{
+        display: flex;
+        flex-direction: row-reverse;
+
+    }
+    }
+@media(min-width:1180px){
+    #petInfo .info-box2{
+        width: 800px;
+        
+
+    }
+    }
+@media(min-width:1180px){
+    #petCount{
+        height: 385px ;
+        width: 500px;
+        font-size: 70px;
+        
+
+    }
+    }
+@media(min-width:1180px){
+    #petsRegisterNum2{
+        margin-top: 180px;
+        font-size: 230px;
+        
+
+    }
+    }
 
 
 

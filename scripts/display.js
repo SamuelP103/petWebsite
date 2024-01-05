@@ -3,7 +3,7 @@ function petAmount() {
     const counter = document.getElementById("petsRegisterNum");
     counter.textContent = petSalon.pets.length.toString();
 }
-
+/*
 function displayPetCards() {
     const DIV = document.getElementById("pets");
     let card = "";
@@ -28,29 +28,32 @@ function displayPetCards() {
 
 }
 
+*/
 
-
-function displayPetCards2() {
-    const TABLE_BODY = document.getElementById("pets2");
-    let tableRows = "";
+function displayPetCards() {
+    const tbody = document.getElementById("pets");
+    tbody.innerHTML = ""; 
 
     for (let i = 0; i < petSalon.pets.length; i++) {
         let pet = petSalon.pets[i];
-        tableRows += `
-        <tr id="${pet.id}">
-            <td> Name: ${pet.name}</td> 
-            <td> Age: ${pet.age}</td> 
-            <td> Gender: ${pet.gender}</td>
-            <td> Breed: ${pet.breed}</td>
-            <td> Service: ${pet.service}</td>
-            <td> <button onclick="deletePet(${pet.id})">🗑️</button></td>
-        </tr>
-        `;
-    }
+        let row = document.createElement("tr");
+        row.id = pet.id;
 
-    TABLE_BODY.innerHTML = tableRows;
+
+        row.innerHTML = `
+        <td style="width: 200px">${pet.name}</td>
+        <td style="width: 200px">${pet.age}</td>
+            <td>${pet.gender}</td>
+            <td>${pet.service}</td>
+            <td>${pet.breed}</td>
+            <td>${pet.time}</td>
+            <td><button onclick="deletePet(${pet.id})">🗑️</button></td>
+        `;
+
+        tbody.appendChild(row);
+    }
 }
 
 
-displayPetCards2();
+
 

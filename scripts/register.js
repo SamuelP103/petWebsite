@@ -34,6 +34,56 @@ function isValid(aPet) {
 
     return validation;
 }
+function isValid(aPet) {
+    let validation = true;
+
+    if (aPet.age === "") {
+        alert("Please add the age");
+        validation = false;
+    }
+
+    return validation;
+}
+function isValid(aPet) {
+    let validation = true;
+
+    if (aPet.gender === "") {
+        alert("Please add the gender");
+        validation = false;
+    }
+
+    return validation;
+}
+function isValid(aPet) {
+    let validation = true;
+
+    if (aPet.breed === "") {
+        alert("Please add the breed");
+        validation = false;
+    }
+
+    return validation;
+}
+function isValid(aPet) {
+    let validation = true;
+
+    if (aPet.service === "") {
+        alert("Please add the service");
+        validation = false;
+    }
+
+    return validation;
+}
+function isValid(aPet) {
+    let validation = true;
+
+    if (aPet.time === "") {
+        alert("Please add when");
+        validation = false;
+    }
+
+    return validation;
+}
 
 function register() {
     console.log("registering");
