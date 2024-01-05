@@ -19,6 +19,7 @@ function displayPetCards(){
             <p> Age: ${pet.age}</p> 
             <p> Gender: ${pet.gender}</p>
             <p> Breed: ${pet.breed}</p>
+            <p> Service: ${pet.service}</p>
         </div>
         `
 }

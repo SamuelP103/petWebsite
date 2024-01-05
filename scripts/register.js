@@ -18,11 +18,12 @@ pets:[]
 }
     
 // obj constructor (function)
-function Pet(n,a,g,b){
+function Pet(n,a,g,b,s){
     this.name=n;
     this.age=a;
     this.gender=g;
     this.breed=b;
+    this.service=s;
 }
 
 function register(){
@@ -32,12 +33,13 @@ let inputName = document.getElementById("txtName").value;
 let inputAge = document.getElementById("txtAge").value;
 let inputGender = document.getElementById("txtGender").value;
 let inputBreed = document.getElementById("txtBreed").value;
+let inputService = document.getElementById("txtService").value;
     //create the obj
 console.log(inputName,inputAge,inputGender,inputBreed);
     //display the pets array on console
 
 // creating obj
-let newPet= new Pet(inputName,inputAge,inputGender, inputBreed);
+let newPet= new Pet(inputName,inputAge,inputGender, inputBreed, inputService);
 petSalon.pets.push(newPet);
 console.log(petSalon.pets);
 
@@ -57,10 +59,10 @@ petAmount();
 
 
 function init(){
-    let p1 = new Pet("Scooby",60,"male","Beagle");
-    let p2 = new Pet("tiger",16,"male","Bulldog");
-    let p3 = new Pet("Lucky",25,"male","Poodle");
-    let p4 = new Pet("rex",12,"male","Lab");
+    let p1 = new Pet("Scooby",60,"male","Beagle","Nail-Clip");
+    let p2 = new Pet("tiger",16,"male","Bulldog","Haircut");
+    let p3 = new Pet("Lucky",25,"male","Poodle","Shots");
+    let p4 = new Pet("rex",12,"male","Lab","Haircut");
 
     petSalon.pets.push(p1,p2,p3,p4);
 
