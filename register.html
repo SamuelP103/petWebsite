@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./styles/style1.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 
 <body class="main-container">
@@ -19,35 +20,13 @@
             <p>Pet Count:<div id="petsRegisterNum2"><span id="petsRegisterNum">0</span></div></h2></p>
         </div>
 
-
-        
-        <!-- for future use in submitting new pets -->
-        <!-- 
-            <form onsubmit="addPet(event)" class="input-container">
-                <div class="info-box3">
-                    <label for="name">Enter your pet's name:</label>
-                    <input type="text" id="name" required>
-                    <label for="breed"><br><br>Select breed:</label>
-                    <select id="breed" required>
-                        <option value="breed">Poodle</option>
-                        <option value="breed">Bulldog</option>
-                        <option value="breed">Wiener-dog</option>
-                        <option value="breed">Other</option>
-                    </select>
-                    <label for="service"><br><br>Select service requested:</label>
-                    <select id="service" required>
-                        <option value="service">Nail-clipping</option>
-                        <option value="service">Haircut</option>
-                    </select><br>
-                    <div class="submit-button-box">
-                        <button class="submit-button" type="submit">Submit</button>
-                    </div>
-                </div>
-            -->
             <div id="petInfo">
                 <main>
                     <div class="info-box2">
                         <h2>Register a new pet</h2>
+                            <div class="alert" id="notifications">
+                                <p>Notifications will be here</p>
+                            </div>
                         <div>
                             <label>Name:&nbsp;</label>
                             <input type="text" placeholder="Name here"
@@ -117,6 +96,10 @@
 
 
 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
     <script src="./scripts/register.js"></script>
     <script src="./scripts/display.js"></script>
 </body>

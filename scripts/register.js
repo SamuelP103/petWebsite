@@ -28,57 +28,38 @@ function isValid(aPet) {
     let validation = true;
 
     if (aPet.name === "") {
-        alert("Please add the name");
+        $("#notifications").text("Insert a valid name").fadeIn(1000).delay(2000).slideUp(1000);
+        $("#txtName").addClass("bg-red");
         validation = false;
     }
-
-    return validation;
-}
-function isValid(aPet) {
-    let validation = true;
 
     if (aPet.age === "") {
-        alert("Please add the age");
+        $("#notifications").text("Insert a valid number for age").fadeIn(1000).delay(2000).slideUp(1000);
+        $("#txtAge").addClass("bg-red");
         validation = false;
     }
-
-    return validation;
-}
-function isValid(aPet) {
-    let validation = true;
 
     if (aPet.gender === "") {
-        alert("Please add the gender");
+        $("#notifications").text("Insert a gender").fadeIn(1000).delay(2000).slideUp(1000);
+        $("#txtGender").addClass("bg-red");
         validation = false;
     }
-
-    return validation;
-}
-function isValid(aPet) {
-    let validation = true;
 
     if (aPet.breed === "") {
-        alert("Please add the breed");
+        $("#notifications").text("Insert a valid breed").fadeIn(1000).delay(2000).slideUp(1000);
+        $("#txtBreed").addClass("bg-red");
         validation = false;
     }
-
-    return validation;
-}
-function isValid(aPet) {
-    let validation = true;
 
     if (aPet.service === "") {
-        alert("Please add the service");
+        $("#notifications").text("Insert a service requested").fadeIn(1000).delay(2000).slideUp(1000);
+        $("#txtService").addClass("bg-red");
         validation = false;
     }
 
-    return validation;
-}
-function isValid(aPet) {
-    let validation = true;
-
     if (aPet.time === "") {
-        alert("Please add when");
+        $("#notifications").text("Insert an appointment time").fadeIn(1000).delay(2000).slideUp(1000);
+        $("#txtTime").addClass("bg-red");
         validation = false;
     }
 
@@ -98,9 +79,24 @@ function register() {
 
     if (isValid(newPet)) {
         petSalon.pets.push(newPet);
-        displayPetCards();
+        
+        // clear inputs with JQ
+        // clear inputs with JQ
+        $("input").val("");
+        displayPetCards();    
         petAmount();
+
+        showNotication("notifications","alert-success","Registration was successful");
+
+    } else {
+        showNotication("notifications","alert-danger","Insert all of the required fields");
+        
+
     }
+}
+function showNotication(id,styling,message){
+    $('#'+id).text(message).addClass(styling).fadeIn(1000).delay(2000).slideUp(1000);
+
 }
 
 function petAmount() {
@@ -147,7 +143,13 @@ function init() {
     petSalon.pets.push(p1, p2, p3, p4);
     displayPetCards();
     petAmount();
+
+    //hook events
+    $("#notifications").hide();
 }
 
 window.onload = init;
+
+
+
 
