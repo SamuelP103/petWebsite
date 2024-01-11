@@ -25,46 +25,50 @@ function Pet(n, a, g, b, s, t) {
     this.id = counter++;
     this.time = t;
 }
-let validation = true;
-function isValid(aPet) {
-    validation = true;
 
-    if (aPet.name == "") {
+function isValid(aPet) {
+    let validation = true;
+    
+    
+    console.log("Name:", aPet.name);
+
+    if (aPet.name === "") {
+        
         console.log("Invalid name");
         $("#notifications").text("Insert a valid name").fadeIn(1000).delay(2000).slideUp(1000);
         $("#txtName").addClass("bg-red");
         validation = false;
     }
 
-    if (aPet.age == "") {
+    if (aPet.age === "") {
         console.log("Invalid name");
         $("#notifications").text("Insert a valid number for age").fadeIn(1000).delay(2000).slideUp(1000);
         $("#txtAge").addClass("bg-red");
         validation = false;
     }
 
-    if (aPet.gender == "") {
+    if (aPet.gender === "") {
         console.log("Invalid gen");
         $("#notifications").text("Insert a gender").fadeIn(1000).delay(2000).slideUp(1000);
         $("#txtGender").addClass("bg-red");
         validation = false;
     }
 
-    if (aPet.breed == "") {
+    if (aPet.breed === "") {
         console.log("Invalid breed");
         $("#notifications").text("Insert a valid breed").fadeIn(1000).delay(2000).slideUp(1000);
         $("#txtBreed").addClass("bg-red");
         validation = false;
     }
 
-    if (aPet.service == "") {
+    if (aPet.service === "") {
         console.log("Invalid service");
         $("#notifications").text("Insert a service requested").fadeIn(1000).delay(2000).slideUp(1000);
         $("#txtService").addClass("bg-red");
         validation = false;
     }
 
-    if (aPet.time == "") {
+    if (aPet.time === "") {
         console.log("Invalid time");
         $("#notifications").text("Insert an appointment time").fadeIn(1000).delay(2000).slideUp(1000);
         $("#txtTime").addClass("bg-red");
@@ -72,6 +76,8 @@ function isValid(aPet) {
     }
     console.log("Validation result:", validation);
     return validation;
+    
+
 
 }
 

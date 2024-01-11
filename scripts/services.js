@@ -9,7 +9,7 @@ function Service(description, price) {
 
 
 // valid or not
-function isValid() {
+function isValid2() {
     let validation = true;
 
     let description = $("#txtDescription").val();
@@ -21,6 +21,7 @@ function isValid() {
         validation = false;
     } else {
         $("#txtDescription").removeClass("bg-red");
+        $("#notifications2").removeClass("alert-danger").addClass("alert-success").text("Service registered successfully!").fadeIn(1000).delay(2000).slideUp(1000);
     }
 
     if (price === "") {
@@ -29,6 +30,7 @@ function isValid() {
         validation = false;
     } else {
         $("#txtPrice").removeClass("bg-red");
+        $("#notifications2").removeClass("alert-danger").addClass("alert-success").text("Service registered successfully!").fadeIn(1000).delay(2000).slideUp(1000);
     }
 
     return validation;
@@ -36,7 +38,7 @@ function isValid() {
 
 // make register function
 function register2() {
-    if (isValid()) {
+    if (isValid2()) {
         
         let inputDescription = $("#txtDescription").val();
         let inputPrice = $("#txtPrice").val();
@@ -52,7 +54,7 @@ function register2() {
         $("#txtDescription, #txtPrice").val("");
 
         
-        $("#notifications2").removeClass("alert-danger").addClass("alert-success").text("Service registered successfully!").fadeIn(1000).delay(2000).slideUp(1000);
+        
     }
 }
 function addServices() {
