@@ -16,16 +16,16 @@ function isValid() {
     let price = $("#txtPrice").val();
 
     if (description === "") {
-        $("#notifications").text("Insert a valid description").fadeIn(1000).delay(2000).slideUp(1000);
-        $("#Notifications").addClass("bg-red");
+        $("#notifications2").text("Insert a valid description").fadeIn(1000).delay(2000).slideUp(1000);
+        $("#Notifications2").addClass("bg-red");
         validation = false;
     } else {
         $("#txtDescription").removeClass("bg-red");
     }
 
     if (price === "") {
-        $("#notifications").text("Insert a valid price").fadeIn(1000).delay(2000).slideUp(1000);
-        $("#Notifications").addClass("bg-red");
+        $("#notifications2").text("Insert a valid price").fadeIn(1000).delay(2000).slideUp(1000);
+        $("#Notifications2").addClass("bg-red");
         validation = false;
     } else {
         $("#txtPrice").removeClass("bg-red");
@@ -35,7 +35,7 @@ function isValid() {
 }
 
 // make register function
-function register() {
+function register2() {
     if (isValid()) {
         
         let inputDescription = $("#txtDescription").val();
@@ -52,7 +52,7 @@ function register() {
         $("#txtDescription, #txtPrice").val("");
 
         
-        $("#notifications").removeClass("alert-danger").addClass("alert-success").text("Service registered successfully!").fadeIn(1000).delay(2000).slideUp(1000);
+        $("#notifications2").removeClass("alert-danger").addClass("alert-success").text("Service registered successfully!").fadeIn(1000).delay(2000).slideUp(1000);
     }
 }
 function addServices() {
@@ -70,7 +70,7 @@ function init() {
     addServices();
 
 //     // Hook events
-    $("#notifications").hide();
+    $("#notifications2").hide();
     $("#btnRegister").on('click', register);
 }
 

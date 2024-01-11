@@ -1,3 +1,5 @@
+
+
 let petSalon = {
     name: "The Super Fashion Pet",
     address: {
@@ -23,47 +25,54 @@ function Pet(n, a, g, b, s, t) {
     this.id = counter++;
     this.time = t;
 }
-
+let validation = true;
 function isValid(aPet) {
-    let validation = true;
+    validation = true;
 
-    if (aPet.name === "") {
+    if (aPet.name == "") {
+        console.log("Invalid name");
         $("#notifications").text("Insert a valid name").fadeIn(1000).delay(2000).slideUp(1000);
         $("#txtName").addClass("bg-red");
         validation = false;
     }
 
-    if (aPet.age === "") {
+    if (aPet.age == "") {
+        console.log("Invalid name");
         $("#notifications").text("Insert a valid number for age").fadeIn(1000).delay(2000).slideUp(1000);
         $("#txtAge").addClass("bg-red");
         validation = false;
     }
 
-    if (aPet.gender === "") {
+    if (aPet.gender == "") {
+        console.log("Invalid gen");
         $("#notifications").text("Insert a gender").fadeIn(1000).delay(2000).slideUp(1000);
         $("#txtGender").addClass("bg-red");
         validation = false;
     }
 
-    if (aPet.breed === "") {
+    if (aPet.breed == "") {
+        console.log("Invalid breed");
         $("#notifications").text("Insert a valid breed").fadeIn(1000).delay(2000).slideUp(1000);
         $("#txtBreed").addClass("bg-red");
         validation = false;
     }
 
-    if (aPet.service === "") {
+    if (aPet.service == "") {
+        console.log("Invalid service");
         $("#notifications").text("Insert a service requested").fadeIn(1000).delay(2000).slideUp(1000);
         $("#txtService").addClass("bg-red");
         validation = false;
     }
 
-    if (aPet.time === "") {
+    if (aPet.time == "") {
+        console.log("Invalid time");
         $("#notifications").text("Insert an appointment time").fadeIn(1000).delay(2000).slideUp(1000);
         $("#txtTime").addClass("bg-red");
         validation = false;
     }
-
+    console.log("Validation result:", validation);
     return validation;
+
 }
 
 function register() {
@@ -72,37 +81,41 @@ function register() {
     let inputAge = document.getElementById("txtAge").value;
     let inputGender = document.getElementById("txtGender").value;
     let inputBreed = document.getElementById("txtBreed").value;
-    let inputService = document.getElementById("txtService").value;
+    let inputService = document.getElementById("txtServices").value;
+
     let inputTime = document.getElementById("txtTime").value;
 
     let newPet = new Pet(inputName, inputAge, inputGender, inputBreed, inputService, inputTime);
+    
+
+    console.log("New Pet:", newPet);
 
     if (isValid(newPet)) {
+        console.log("is valid?");
         petSalon.pets.push(newPet);
         
         // clear inputs with JQ
-        // clear inputs with JQ
-        $("input").val("");
+        
+        
         displayPetCards();    
         petAmount();
+        //displayPets();
+        $("input").val("");
 
-        showNotication("notifications","alert-success","Registration was successful");
+        showNotification("notifications","alert-success","Registration was successful");
 
     } else {
-        showNotication("notifications","alert-danger","Insert all of the required fields");
+        showNotification("notifications","alert-danger","Insert all of the required fields");
         
 
     }
 }
-function showNotication(id,styling,message){
+function showNotification(id,styling,message){
     $('#'+id).text(message).addClass(styling).fadeIn(1000).delay(2000).slideUp(1000);
 
 }
 
-function petAmount() {
-    const counterElement = document.getElementById("petsRegisterNum");
-    counterElement.textContent = petSalon.pets.length.toString();
-}
+
 
 function deletePet(petID) {
     console.log("Deleting pet with ID: " + petID);
@@ -149,7 +162,7 @@ function init() {
     let p4 = new Pet("rex", 12, "male", "Lab", "Haircut","16:00");
 
     petSalon.pets.push(p1, p2, p3, p4);
-    addServices();
+    
     displayPetCards();
     petAmount();
 

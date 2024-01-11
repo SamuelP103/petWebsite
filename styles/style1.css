@@ -34,8 +34,20 @@ h1 {
     line-height: 40px;
     
 }
+#txtBreed{
+    width: 280px;
+}
+#txtServices{
+    width: 278px;
+}
+#txtName{
+    width: 282px;
+}
 #txtGender{
-    width: 130px;
+    width: 272px;
+}
+#txtTime{
+    margin-bottom: 10px;
 }
 p {
     margin: 0;
@@ -69,6 +81,13 @@ li:last-child {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+#button{
+    margin-top: 50px;
+    margin-bottom: 20px;
+    width: 287px;
+    height: 50px;
+    margin-left: 85px;
 }
 
 label {
@@ -246,7 +265,7 @@ tbody button{
     }
 @media(min-width:1180px){
     #petCount{
-        height: 385px ;
+        height: 485px ;
         width: 500px;
         font-size: 70px;
         
