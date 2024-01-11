@@ -6,6 +6,8 @@ function Service(description, price) {
     this.price = price;
 }
 
+
+
 // valid or not
 function isValid() {
     let validation = true;
@@ -15,7 +17,7 @@ function isValid() {
 
     if (description === "") {
         $("#notifications").text("Insert a valid description").fadeIn(1000).delay(2000).slideUp(1000);
-        $("#txtDescription").addClass("bg-red");
+        $("#Notifications").addClass("bg-red");
         validation = false;
     } else {
         $("#txtDescription").removeClass("bg-red");
@@ -23,7 +25,7 @@ function isValid() {
 
     if (price === "") {
         $("#notifications").text("Insert a valid price").fadeIn(1000).delay(2000).slideUp(1000);
-        $("#txtPrice").addClass("bg-red");
+        $("#Notifications").addClass("bg-red");
         validation = false;
     } else {
         $("#txtPrice").removeClass("bg-red");
@@ -35,16 +37,17 @@ function isValid() {
 // make register function
 function register() {
     if (isValid()) {
-        console.log("Adding a new service");
+        
         let inputDescription = $("#txtDescription").val();
         let inputPrice = $("#txtPrice").val();
 
         let newService = new Service(inputDescription, inputPrice);
         services.push(newService);
+        saveArray(newService);
+        
+        
 
-        console.log(newService);
-        console.log(services);
-
+        
         
         $("#txtDescription, #txtPrice").val("");
 
@@ -52,14 +55,41 @@ function register() {
         $("#notifications").removeClass("alert-danger").addClass("alert-success").text("Service registered successfully!").fadeIn(1000).delay(2000).slideUp(1000);
     }
 }
+function addServices() {
+    for(let i = 0; i < services.length; i++) {
+        $("#txtServices").append(`<option value="${services[i].description}">${services[i].description}</option>`);
+    }
+}
 
 // create init function
 function init() {
-    let s1 = new Service("grooming", 20);
-    services.push(s1);
-    // hook event
+
+    services = readArray();
+
+
+    addServices();
+
+//     // Hook events
+    $("#notifications").hide();
     $("#btnRegister").on('click', register);
 }
 
-// wait for load
+
 $(document).ready(init);
+// function init() {
+//     let s1 = new Service("grooming",20);
+//     services.push(s1);
+
+
+
+//     addServices();
+
+//     // Hook events
+    
+//     $("#btnRegister").on('click', register);
+// }
+
+
+// window.onload=init;
+
+

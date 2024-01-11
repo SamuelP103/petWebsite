@@ -132,6 +132,14 @@ function deletePet(petID) {
         petAmount();
     }
 }
+function addServices(){
+    console.log(services);
+    let services = readArray();
+    for(let i=0;i<services.length;i++){
+        $("#txtServices").append(`<option value="${services[i].description}">${services[i].description}</option>`)
+    }
+}
+
 function init() {
     
 
@@ -141,6 +149,7 @@ function init() {
     let p4 = new Pet("rex", 12, "male", "Lab", "Haircut","16:00");
 
     petSalon.pets.push(p1, p2, p3, p4);
+    addServices();
     displayPetCards();
     petAmount();
 
