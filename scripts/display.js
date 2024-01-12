@@ -42,13 +42,19 @@ function displayPetCards() {
 
 
         row.innerHTML = `
-        <td style="width: 200px">${pet.name}</td>
-        <td style="width: 200px">${pet.age}</td>
+            
+            <td>${pet.name}</td>
+            <td>${pet.age}</td>
             <td>${pet.gender}</td>
             <td>${pet.service}</td>
+            <td>${pet.price}</td>
             <td>${pet.breed}</td>
             <td>${pet.time}</td>
             <td><button onclick="deletePet(${pet.id})">🗑️</button></td>
+
+            
+
+            
         `;
 
         tbody.appendChild(row);

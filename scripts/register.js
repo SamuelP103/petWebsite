@@ -16,12 +16,13 @@ let petSalon = {
 
 let counter = 0;
 
-function Pet(n, a, g, b, s, t) {
+function Pet(n, a, g, b, s, t, price) {
     this.name = n;
     this.age = a;
     this.gender = g;
     this.breed = b;
     this.service = s;
+    this.price=price;
     this.id = counter++;
     this.time = t;
 }
@@ -90,8 +91,10 @@ function register() {
     let inputService = document.getElementById("txtServices").value;
 
     let inputTime = document.getElementById("txtTime").value;
+    let inputPrice=getServicePrice(inputService);
+    
 
-    let newPet = new Pet(inputName, inputAge, inputGender, inputBreed, inputService, inputTime);
+    let newPet = new Pet(inputName, inputAge, inputGender, inputBreed, inputService, inputTime,inputPrice);
     
 
     console.log("New Pet:", newPet);
@@ -116,6 +119,19 @@ function register() {
 
     }
 }
+function getServicePrice(serviceDescription) {
+    let services = readArray();
+    let price;
+    for (let i = 0; i < services.length; i++) {
+        console.log(services[i]);
+        if (services[i].description == serviceDescription) {
+            price = services[i].price;
+            break;
+        }
+    }
+    return price;
+}
+
 function showNotification(id,styling,message){
     $('#'+id).text(message).addClass(styling).fadeIn(1000).delay(2000).slideUp(1000);
 
@@ -162,14 +178,15 @@ function addServices(){
 function init() {
     
 
-    let p1 = new Pet("Scooby", 60, "male", "Beagle", "Nail-Clip","13:00");
-    let p2 = new Pet("tiger", 16, "male", "Bulldog", "Haircut","09:00");
-    let p3 = new Pet("Lucky", 25, "male", "Poodle", "Shots","14:00");
-    let p4 = new Pet("rex", 12, "male", "Lab", "Haircut","16:00");
+    let p1 = new Pet("Scooby", 60, "male", "Beagle", "Nail-Clip","13:00", getServicePrice("Nail-clip"));
+    let p2 = new Pet("tiger", 16, "male", "Bulldog", "Haircut","09:00", getServicePrice("Haircut"));
+    let p3 = new Pet("Lucky", 25, "male", "Poodle", "Vaccine","14:00", getServicePrice("Vaccine"));
+    let p4 = new Pet("rex", 12, "male", "Lab", "Haircut","16:00", getServicePrice("Haircut"));
 
     petSalon.pets.push(p1, p2, p3, p4);
     
     displayPetCards();
+    addServices();
     petAmount();
 
     //hook events

@@ -187,10 +187,12 @@ table {
     
 }
 tbody{
-    width: 690%;
+    width: 790%;
 }
-tbody button{
-    margin-left: -400px;
+ tbody button{ 
+   margin-right: 100%;
+   margin-left: -70px;
+
 }
 /*  600 768 1080 1440 */
 /* @media(max-width:1440px){
@@ -202,17 +204,17 @@ tbody button{
     } */
 @media(max-width:1500px){
     tbody button{
-        margin-left: -280px;
+        margin-left: -80px;
     }
     }
 @media(max-width:1230px){
     tbody button{
-        margin-left: -200px;
+        margin-left: -80px;
     }
     }
 @media(max-width:900px){
     tbody button{
-        margin-left: -170px;
+        margin-left: -30px;
     }
     }
 @media(max-width:900px){
