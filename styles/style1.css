@@ -192,7 +192,6 @@ tbody{
  tbody button{ 
    margin-right: 100%;
    margin-left: -70px;
-
 }
 /*  600 768 1080 1440 */
 /* @media(max-width:1440px){
@@ -285,6 +284,8 @@ tbody{
 .bg-red{
     background-color: red;
 }
+
+
 
 
 
